@@ -1,3 +1,7 @@
 #heading{
-    color: brown;
+    color: darkmagenta;
+    width:full;
+   
+    box-shadow:7rem;
+    text-size-adjust: 5;
 }
