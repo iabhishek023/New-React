@@ -1,7 +1,64 @@
-#heading{
+/* #heading{
     color: darkmagenta;
     width:full;
    
     box-shadow:7rem;
     text-size-adjust: 5;
+} */
+.body{
+    background-color: antiquewhite;
+}
+
+.header{
+    display: flex ;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+    
+}
+
+.logo{
+    width:200px;
+}
+
+.nav-items>ul{
+    font-size: 24px;
+    display: flex;
+    list-style-type: none;
+}
+.nav-items>ul>li{
+    padding: 10px;
+    margin: 10px;
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.res-card{
+    
+    width: 190px;
+    height: 370px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    padding: 5px;
+}
+
+.res-card:hover{
+    border:1px solid black;
+    cursor: pointer;
+}
+
+.search{
+    padding: 10px;
+}
+
+.res-logo{
+    object-fit: cover;
+  
+    width: 100%;
+}
+
+.filter-btn{
+    margin:10px;
 }
