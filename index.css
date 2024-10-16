@@ -37,8 +37,11 @@
 }
 .res-card{
     
-    width: 190px;
-    height: 370px;
+    width: 200px;
+    flex-wrap: wrap;
+    /* /* word-wrap: break-word;  */
+    overflow-wrap: break-word;  
+    white-space: normal;
     margin: 5px;
     background-color: #f0f0f0;
     padding: 5px;
@@ -61,4 +64,29 @@
 
 .filter-btn{
     margin:10px;
+}
+
+.shimmer-card{
+    height: 290px;
+    width: 200px;
+    margin: 10px;
+    background-color: #f0f0f0;
+}
+
+.shimmer-container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.login{
+    margin: 5px;
+    background-color: black;
+    color: aliceblue;
+    padding: 0 10px;
+}
+
+.filter{
+    display: flex;
 }
