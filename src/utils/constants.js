@@ -2,6 +2,8 @@ export const LOGO_URL="https://thumbs.dreamstime.com/b/food-delivery-logo-design
 
 export const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
+export const MENU_URL="https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.66500&lng=77.44770&restaurantId=";
+
 // export let resList=[{
 //     type:"restaurant",
 //     data: {

@@ -14,3 +14,6 @@
 -code splitting
 -differntail bundling
 
+#2 types of Routing In Web Pages
+-Client Side Rounting
+-Server Side Routing
