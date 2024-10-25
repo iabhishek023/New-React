@@ -46,16 +46,19 @@ const Body=()=>{
 
     return listOfRest.length===0?<Shimmer/>:(
       <div className="body">
-        <div className="filter">
-          <div className="search">
-            <input type="text" 
-               className="search-box"
+        <div className="filter flex ">
+          <div className="search m-4 p-4">
+            <input  type="text" 
+            
+               className="search-box  border border-black "
+               placeholder="Search.."
+              
                value={searchText}
                 onChange={(e)=>{
                   setSearchText(e.target.value);
                }}
                />
-            <button 
+            <button className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={()=>{
                console.log(searchText);
 
@@ -67,31 +70,30 @@ const Body=()=>{
             }}>Search</button>
             
           </div>
+          <div className="px-4 py-2  flex items-center">
             <button 
-               className="filter-btn"
+               className="px-4 py-2 bg-gray-300 m-3 rounded-lg "
                onClick={()=>{
                    const filteredList=listOfRest.filter(
-                       (res)=>res.info.avgRating>=4.5
+                       (res)=>res.info.avgRating>=4.4
                     );
 
                        //console.log(resList); 
-                       setListOfRest(filteredList);                      
+                       setFilteredRest(filteredList);                      
                     }
             }
             >Top rated Restaurant</button>
+
+           </div>
         </div>
-        <div className="res-container">
+        <div className="res-container flex flex-wrap">
             {filteredRest.map((restaurant)=>(
                <Link 
                 key={restaurant.info.id}
                to={"/restaurants/"+restaurant.info.id}> <RestaurantCard  resData={restaurant} /></Link>
             ))}
             
-          {/* <RestaurantCard resData={resList[0]}/>
-          <RestaurantCard resData={resList[1]}/>
-          <RestaurantCard resData={resList[2]}/>
-          <RestaurantCard resData={resList[3]}/>
-          <RestaurantCard resData={resList[4]}/> */}
+         
 
         </div>
       </div>
