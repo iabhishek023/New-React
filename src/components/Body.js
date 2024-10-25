@@ -3,6 +3,7 @@ import {useState,useEffect} from "react";
 // import { resList } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body=()=>{
 
@@ -21,6 +22,7 @@ const Body=()=>{
 
       const json=await data.json();
 
+      console.log("BodyText")
       console.log(json);
 
       //Option Chaining
@@ -31,7 +33,15 @@ const Body=()=>{
 
   //Conditional Rendering
   
- 
+  const onlineStatus=useOnlineStatus();
+
+  if(onlineStatus===false)
+    return(
+      <h1>Looks like you are offline,check your internet connection
+        
+      </h1>
+    )
+  
   
 
     return listOfRest.length===0?<Shimmer/>:(
