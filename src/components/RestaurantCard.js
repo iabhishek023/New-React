@@ -13,7 +13,7 @@ const RestaurantCard=(props)=>{
 
     }=resData?.info
     return(
-      <div className="m-4 p-4 w-64 res-card bg-gray-100 border border-gray-300 rounded-lg 
+      <div className="m-4 p-4 w-60 res-card bg-gray-100 border border-gray-300 rounded-lg 
       transform transition-transform duration-300 hover:scale-105 hover:bg-gray-300" >
         <img 
         className="res-logo rounded-xl" 
@@ -26,6 +26,22 @@ const RestaurantCard=(props)=>{
         <h4>{costForTwo}</h4>
       </div>
     )
-  };
+  }
 
-  export default RestaurantCard;
+  //Higher Order Component
+
+  // input-TestaurantCard=> RestaurantCardPromoted
+
+  export const withPromtedLabel=(RestaurantCard)=>{
+    return(props)=>{
+      return (
+        <div className="relative m-2 p-2">
+          <label className="absolute  bg-green-700 text-white p-2 rounded-lg z-10">Open</label>
+          <RestaurantCard {...props}/>
+        </div>
+      )
+    }
+  }
+
+
+export default RestaurantCard;

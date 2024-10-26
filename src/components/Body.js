@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard ,{withPromtedLabel}from "./RestaurantCard";
 import {useState,useEffect} from "react";
 // import { resList } from "../utils/constants";
 import Shimmer from "./Shimmer";
@@ -11,6 +11,9 @@ const Body=()=>{
     const [filteredRest,setFilteredRest]=useState([]);
 
     const [searchText,setSearchText]=useState("");
+    console.log(listOfRest);
+
+    const RestaurantCardPromoted=withPromtedLabel(RestaurantCard);
 
     useEffect(()=>{
       fetchData();
@@ -23,12 +26,12 @@ const Body=()=>{
       const json=await data.json();
 
       console.log("BodyText")
-      console.log(json);
+      
 
       //Option Chaining
       setListOfRest(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       setFilteredRest(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-     // console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   //Conditional Rendering
@@ -90,7 +93,11 @@ const Body=()=>{
             {filteredRest.map((restaurant)=>(
                <Link 
                 key={restaurant.info.id}
-               to={"/restaurants/"+restaurant.info.id}> <RestaurantCard  resData={restaurant} /></Link>
+               to={"/restaurants/"+restaurant.info.id}> 
+               {
+                 restaurant.info.isOpen ? (<RestaurantCardPromoted resData={restaurant}/>):(<RestaurantCard  resData={restaurant} />)
+               }
+               </Link>              
             ))}
             
          
