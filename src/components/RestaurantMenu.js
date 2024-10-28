@@ -22,6 +22,8 @@ const RestaurantMenu = () => {
         setResInfo(json.data);
     }
 
+    const[showIndex,setShowIndex]=useState(0);
+
     if(resInfo===null) return <Shimmer/>
     const{name,city,costForTwoMessage,cuisines}=resInfo?.cards[2]?.card?.card?.info
 
@@ -48,8 +50,15 @@ const RestaurantMenu = () => {
             <p className="font-bold">{cuisines.join(", ")}</p>
 
             {
-                categories.map((category)=>(
-                <RestaurantCategory key={category.card.card.title} data={category?.card?.card}/>
+                categories.map((category,index)=>(
+
+                    //Controlled Component
+                <RestaurantCategory 
+                   key={category.card.card.title}
+                   data={category?.card?.card}
+                   showItems={index===showIndex ? true:false}                //transferring the power of opening and closing accodian to the parent
+                   setShowIndex={()=>setShowIndex(index)}
+                   />
                 ))
             }
 

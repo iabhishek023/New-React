@@ -48,7 +48,7 @@ const Body=()=>{
   
 
     return listOfRest.length===0?<Shimmer/>:(
-      <div className="body">
+      <div className="body bg-dark-200">
         <div className="filter flex ">
           <div className="search m-4 p-4">
             <input  type="text" 

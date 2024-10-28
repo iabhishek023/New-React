@@ -17,3 +17,11 @@
 #2 types of Routing In Web Pages
 -Client Side Rounting
 -Server Side Routing
+
+
+#Redux Toolkit
+-Install @reduxjs/toolkit and react-redux
+-build your store 
+-slice(cart slice)
+-dispatch(action)
+-Selector
